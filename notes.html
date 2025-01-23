@@ -1,37 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Previous Notes - Catherine Tu</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Notes - Catherine Tu</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="notes.html">Previous Notes</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notes.html">Class Notes & Cheatsheets</a></li>
+      </ul>
     </nav>
 
     <main>
-        <section class="notes">
-            <h1>My Notes</h1>
-            <div class="notes-grid">
-                <!-- Note Entry 1 -->
-                <article class="note-card">
-                    <h2>Note Topic</h2>
-                    <div class="note-date">Date: [Add date]</div>
-                    <p>Note content preview goes here...</p>
-                    <a href="#" class="read-more">Read More</a>
-                </article>
-                <!-- Add more note cards as needed -->
+      <section class="notes-intro">
+        <div class="intro-content">
+          <h1>Study Notes</h1>
+          <p class="intro-text">
+            I learn best from notetaking -- here are some notes & cheat sheets
+            from classes I really enjoyed attending and learning about!
+          </p>
+        </div>
+      </section>
+
+      <section class="notes-grid">
+        <!-- MIT 3.091 -->
+        <article class="note-card">
+          <div class="pdf-preview">
+            <div class="preview-card">
+              <i class="fas fa-book-open preview-icon"></i>
+              <h3>Programming Fundamentals</h3>
+              <p>Dynamic programming concepts, algorithms, and data structures explained with examples.</p>
             </div>
-        </section>
+          </div>
+          <div class="note-content">
+            <h2>Fundamentals of Programming</h2>
+            <p class="course-code">MIT 6.1010</p>
+            <p class="note-description">
+              Dynamic programming, algorithms, and data structures.
+            </p>
+            <div class="note-meta">
+              <span class="pages"
+                ><i class="fas fa-book-open"></i> 44 pages</span
+              >
+              <span class="date">Fall 2024</span>
+            </div>
+            <a
+              href="pdfs/61010-recitations.pdf"
+              class="view-notes"
+              target="_blank"
+              >View Notes <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+
+        <!-- MIT 3.091  -->
+        <article class="note-card">
+          <div class="pdf-preview">
+            <div class="preview-card">
+              <i class="fas fa-atom preview-icon"></i>
+              <h3>Solid-State Chemistry</h3>
+              <p>Comprehensive cheat sheet covering key concepts and formulas for the final exam.</p>
+            </div>
+          </div>
+          <div class="note-content">
+            <h2>Solid-State Chem</h2>
+            <p class="course-code">MIT 3.091</p>
+            <p class="note-description">
+              Double-sided cheat sheet for the final exam
+            </p>
+            <div class="note-meta">
+              <span class="pages"
+                ><i class="fas fa-book-open"></i> 2 pages</span
+              >
+              <span class="date">Fall 2024</span>
+            </div>
+            <a
+              href="pdfs/3091-final-exam-cheat-sheet.pdf"
+              class="view-notes"
+              target="_blank"
+              >View Notes <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+      </section>
     </main>
 
     <footer>
-        <p>© 2025 Catherine Tu. All rights reserved.</p>
+      <p>2025 Catherine Tu. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
