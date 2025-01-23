@@ -494,10 +494,17 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: auto;
+  max-height: 100%;
 }
 
 .about-content::-webkit-scrollbar {
   width: 8px;
+  display: none; /* Hide by default */
+}
+
+.about-content:hover::-webkit-scrollbar,
+.about-content:focus::-webkit-scrollbar {
+  display: block;
 }
 
 .about-content::-webkit-scrollbar-track {
@@ -548,7 +555,7 @@ main {
 }
 
 /* Media query for responsive about section */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-container {
     height: auto;
     min-height: unset;
@@ -561,6 +568,12 @@ main {
   .about-content {
     height: auto;
     min-height: 400px;
+    max-height: none; /* Remove max-height constraint on mobile */
+    overflow-y: visible; /* Show all content on mobile */
+  }
+  
+  .about-content::-webkit-scrollbar {
+    display: block;
   }
 }
 
