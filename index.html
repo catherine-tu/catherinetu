@@ -1,158 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catherine Tu - Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="notes.html">Previous Notes</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="notes.html">Previous Notes</a></li>
+      </ul>
     </nav>
 
     <main>
-        <section class="hero">
-            <div class="bubble-container"></div>
-            <div class="hero-container">
-                <div class="profile-container">
-                    <img src="profile-pic.jpg" alt="Catherine Tu" class="profile-picture">
-                </div>
-                <div class="hero-text">
-                    <h1 class="animate-title">Hey! I'm Catherine Tu.</h1>
-                    <p class="intro animate-text">
-                        I'm a student at MIT pursuing computer science and music,
-                        interested in audio/signal processing, robotics, AI/ML, and web dev!
-                    </p>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="arrow">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </section>
+      <section class="hero">
+        <div class="bubble-container"></div>
+        <div class="hero-container">
+          <div class="profile-container">
+            <img
+              src="profile-pic.jpg"
+              alt="Catherine Tu"
+              class="profile-picture"
+            />
+          </div>
+          <div class="hero-text">
+            <h1 class="animate-title">Hey! I'm Catherine Tu.</h1>
+            <p class="intro animate-text">
+              I'm a student at MIT pursuing computer science and music,
+              interested in audio/signal processing, robotics, AI/ML, and web
+              dev!
+            </p>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </section>
 
-        <section id="projects" class="projects">
+      <section id="projects" class="projects">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>Here are some of my recent works and contributions</p>
+        </div>
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="dj_console.png" alt="chilldeck" />
+            </div>
+            <div class="project-content">
+              <h3>chilldeck</h3>
+              <p>
+                Utilized Audioshake API, React, CSS, and MongoDB, built a web
+                app from scratch in 1 month that allows users to choose/upload
+                songs, operate a DJ console online, and have their own custom
+                profiles, aiming to make DJ-ing more accessible to beginners
+              </p>
+              <div class="project-links">
+                <a href="#" class="live-link">Live Demo</a>
+                <a
+                  href="https://github.com/weblab-class/catherine-tu-Alexander-L-Li-seanwilson16/tree/main"
+                  class="github-link"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="x_axis_img87.png" alt="optical flow" />
+            </div>
+            <div class="project-content">
+              <h3>Optical Flow Algorithm on Brain Data</h3>
+              <p>
+                Applied an optical flow algorithm on real brain data finding the
+                vector field of cerebrospinal fluid (CSF) within the fourth
+                ventricle over time. Created and delivered a presentation to lab
+                members during team meeting to brainstorm ways they can apply
+                the algorithm
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://drive.google.com/file/d/1qJdG74n4Arj-fUt2g_rWR6cbLOEjuu1g/view?usp=sharing"
+                  class="live-link"
+                  >Slides</a
+                >
+                <a
+                  href="https://github.com/catherine-tu/optical-flow"
+                  class="github-link"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="project3-image.jpg" alt="Project 3" />
+            </div>
+            <div class="project-content">
+              <h3>Project Name</h3>
+              <p>
+                A brief description of the project and what technologies were
+                used. Highlight the key features and your role in development.
+              </p>
+              <div class="project-links">
+                <a href="#" class="live-link">Live Demo</a>
+                <a href="#" class="github-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about-container">
+          <div class="about-image">
+            <img src="mit-logs-pfp.jpg" alt="About Me Image" />
+          </div>
+          <div class="about-content">
             <div class="section-header">
-                <h2>Projects</h2>
-                <p>Here are some of my recent works and contributions</p>
+              <h2>About Me</h2>
             </div>
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1-image.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Name</h3>
-                        <p>A brief description of the project and what technologies were used. Highlight the key features and your role in development.</p>
-                        <div class="project-links">
-                            <a href="#" class="live-link">Live Demo</a>
-                            <a href="#" class="github-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
+            <p class="about-headline">Code, Creativity, Coffee.</p>
+            <p class="about-description">
+              I'm Catherine Tu, an MIT student with a passion for software and
+              music, where creativity and innovation fuel me. From incorperating
+              music into dynamic web projects to learning to produce and compose
+              original songs, I love exploring the intersection of technology
+              and artistry. Outside of academics, I enjoy music--singing,
+              songwriting, and playing guitar or piano. I'm also a coffee
+              enthusiast, always experimenting with new recipes to craft the
+              perfect brew. As one could say, I love finding the perfect blend
+              between code and creativity (and coffee)!
+            </p>
+          </div>
+        </div>
+      </section>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project2-image.jpg" alt="Project 2">
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Name</h3>
-                        <p>A brief description of the project and what technologies were used. Highlight the key features and your role in development.</p>
-                        <div class="project-links">
-                            <a href="#" class="live-link">Live Demo</a>
-                            <a href="#" class="github-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project3-image.jpg" alt="Project 3">
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Name</h3>
-                        <p>A brief description of the project and what technologies were used. Highlight the key features and your role in development.</p>
-                        <div class="project-links">
-                            <a href="#" class="live-link">Live Demo</a>
-                            <a href="#" class="github-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="mit-logs-pfp.jpg" alt="About Me Image">
-                </div>
-                <div class="about-content">
-                    <div class="section-header">
-                        <h2>About Me</h2>
-                    </div>
-                    <p class="about-headline">
-                        Code, Creativity, Coffee.</p>
-                    <p class="about-description">
-                        I'm Catherine Tu, an MIT student with a passion for software and music,
-                        where creativity and innovation fuel me. From incorperating music into dynamic
-                        web projects to learning to produce and compose original songs, I love
-                        exploring the intersection of technology and artistry. Outside of academics,
-                        I enjoy music--singing, songwriting, and playing guitar or piano. 
-                        I'm also a coffee enthusiast, always experimenting with new recipes to craft the perfect brew.
-                        As one could say, I love finding the perfect blend between code and creativity (and coffee)!                        
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="section-header">
-                <h2>Stay in Touch</h2>
-                <p>Feel free to reach out!</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-links">
-                    <a href="mailto:tuscatherine@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/catherine-tu-/" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/catherine-tu" class="contact-link">
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </a>
-                    <a href="your-resume.pdf" class="contact-link">
-                        <i class="fas fa-file-alt"></i>
-                        Resume
-                    </a>
-                </div>
-            </div>
-        </section>
+      <section id="contact" class="contact">
+        <div class="section-header">
+          <h2>Stay in Touch</h2>
+          <p>Feel free to reach out!</p>
+        </div>
+        <div class="contact-container">
+          <div class="contact-links">
+            <a href="mailto:tuscatherine@gmail.com" class="contact-link">
+              <i class="fas fa-envelope"></i>
+              Email
+            </a>
+            <a
+              href="https://www.linkedin.com/in/catherine-tu-/"
+              class="contact-link"
+            >
+              <i class="fab fa-linkedin"></i>
+              LinkedIn
+            </a>
+            <a href="https://github.com/catherine-tu" class="contact-link">
+              <i class="fab fa-github"></i>
+              GitHub
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1AgsHo5obyZEYBc88gnkRePpn6Owjd-h9/view?usp=sharing"
+              class="contact-link"
+            >
+              <i class="fas fa-file-alt"></i>
+              Resume
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p> 2025 Catherine Tu. All rights reserved.</p>
+      <p>2025 Catherine Tu. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

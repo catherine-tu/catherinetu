@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: personal-website
+    env: static
+    buildCommand: none
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
