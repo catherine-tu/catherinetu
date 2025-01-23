@@ -310,7 +310,7 @@ main {
   font-weight: 700;
   font-size: clamp(1.8rem, 4vw, 2.2rem);
   color: #2c3e50;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   position: relative;
   display: inline-block;
 }
@@ -329,13 +329,24 @@ main {
     transparent
   );
   opacity: 0.5;
+  margin-bottom: 0;
 }
 
-.section-header p {
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  color: #2c3e50;
-  max-width: 600px;
-  margin: 0 auto;
+.about-content .section-header {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.about-headline {
+  font-family: "Open Sans", serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  color: #003459;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  text-align: left;
 }
 
 /* Projects Section */
@@ -464,14 +475,13 @@ main {
   align-items: stretch;
   gap: 4rem;
   padding: 2rem;
-  height: clamp(600px, 70vh, 800px); /* Dynamic height based on viewport */
+  height: 600px; /* Fixed height for consistency */
 }
 
 .about-image {
   flex: 1;
   position: relative;
-  display: flex;
-  align-items: center;
+  height: 100%; /* Match container height */
 }
 
 .about-image img {
@@ -492,19 +502,13 @@ main {
   box-shadow: 0 10px 30px rgba(0, 52, 89, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  overflow-y: auto;
-  max-height: 100%;
+  justify-content: center;
+  height: 100%;
+  overflow-y: auto; /* Always allow scrolling when needed */
 }
 
 .about-content::-webkit-scrollbar {
-  width: 8px;
-  display: none; /* Hide by default */
-}
-
-.about-content:hover::-webkit-scrollbar,
-.about-content:focus::-webkit-scrollbar {
-  display: block;
+  width: 6px;
 }
 
 .about-content::-webkit-scrollbar-track {
@@ -522,16 +526,13 @@ main {
   background: rgba(0, 52, 89, 0.3);
 }
 
-.about-content > * {
-  padding-right: 1rem;
-}
-
 .about-content .section-header {
-  margin-bottom: 1rem;
+  text-align: center; /* Center the header */
+  margin-bottom: 0.5rem; /* Reduced from default */
 }
 
 .about-content .section-header h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Reduced spacing after the title */
 }
 
 .about-headline {
@@ -539,9 +540,11 @@ main {
   font-weight: 500;
   font-size: clamp(1.5rem, 4vw, 1.8rem);
   color: #003459;
+  margin-top: 0.5rem; /* Small top margin */
   margin-bottom: 1.5rem;
   line-height: 1.4;
   letter-spacing: -0.5px;
+  text-align: left; 
 }
 
 .about-description {
@@ -552,95 +555,7 @@ main {
   line-height: 1.8;
   letter-spacing: 0.2px;
   margin-bottom: 1rem;
-}
-
-/* Media query for responsive about section */
-@media (max-width: 1024px) {
-  .about-container {
-    height: auto;
-    min-height: unset;
-  }
-
-  .about-image {
-    height: 400px; /* Fixed height on mobile */
-  }
-
-  .about-content {
-    height: auto;
-    min-height: 400px;
-    max-height: none; /* Remove max-height constraint on mobile */
-    overflow-y: visible; /* Show all content on mobile */
-  }
-  
-  .about-content::-webkit-scrollbar {
-    display: block;
-  }
-}
-
-@media (max-width: 1200px) {
-  .about-container {
-    width: 95%;
-    gap: 3rem;
-  }
-
-  .about-image {
-    flex: 0 1 500px;
-  }
-
-  .about-content {
-    flex: 0 1 450px;
-  }
-}
-
-@media (max-width: 900px) {
-  .about-container {
-    min-height: 350px;
-  }
-
-  .about-image {
-    flex: 0 1 400px;
-  }
-
-  .about-content {
-    flex: 0 1 350px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 3rem;
-    align-items: center;
-    min-height: unset;
-    width: 90%;
-  }
-
-  .about-image {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1;
-  }
-
-  .about-content {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    min-height: 300px;
-    max-height: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-container {
-    width: 95%;
-  }
-
-  .about-content {
-    min-height: 250px;
-    max-height: 350px;
-    padding: 1.5rem;
-  }
+  text-align: left; /* Center the description */
 }
 
 /* Contact Section */
@@ -886,4 +801,79 @@ footer {
 
 .arrow span:nth-child(3) {
   animation-delay: -0.4s;
+}
+
+/* Media queries */
+@media (min-width: 1400px) {
+  .about-content {
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 1400px) {
+  .about-container {
+    gap: 3rem;
+  }
+
+  .about-content {
+    justify-content: flex-start;
+  }
+
+  .about-headline,
+  .about-description {
+    text-align: left;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-container {
+    height: auto;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-image {
+    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .about-image {
+    height: 350px;
+  }
+
+  .about-content {
+    height: 350px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    width: 95%;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .about-content {
+    height: 300px;
+    padding: 1.25rem;
+  }
 }
