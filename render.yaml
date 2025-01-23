@@ -8,3 +8,9 @@ services:
       - path: /*
         name: Cache-Control
         value: no-cache
+      - path: /*.png
+        name: Cache-Control
+        value: public, max-age=31536000
+      - path: /*.ico
+        name: Cache-Control
+        value: public, max-age=31536000
