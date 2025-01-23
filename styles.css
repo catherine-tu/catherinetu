@@ -374,7 +374,7 @@ main {
 }
 
 .project-content h3 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', sans-serif;
     margin-bottom: 0.5rem;
 }
 
@@ -502,7 +502,7 @@ main {
 }
 
 .about-headline {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', serif;
     font-weight: 500;
     font-size: clamp(1.5rem, 4vw, 1.8rem);
     color: #003459;
