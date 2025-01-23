@@ -207,10 +207,60 @@ main {
     max-width: 600px;
 }
 
+.hero-text h1 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 52, 89, 0.1);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-text h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-color),
+        transparent
+    );
+    opacity: 0.5;
+}
+
+.hero-text p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
+    color: #5a7187;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.3px;
+}
+
+.alt-title {
+    font-family: 'Open Sans', serif;
+    font-weight: 600;
+    font-size: clamp(2.8rem, 7vw, 4.2rem);
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
 .animate-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', serif;
     font-size: clamp(1.8rem, 5vw, 2.5rem);
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     color: #2c3e50;
     opacity: 0;
     animation: fadeIn 1s ease forwards;
@@ -230,10 +280,29 @@ main {
 }
 
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', serif;
+    font-weight: 700;
     font-size: clamp(1.8rem, 4vw, 2.2rem);
     color: #2c3e50;
     margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-color),
+        transparent
+    );
+    opacity: 0.5;
 }
 
 .section-header p {
@@ -305,7 +374,7 @@ main {
 }
 
 .project-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 0.5rem;
 }
 
@@ -369,28 +438,12 @@ main {
     align-items: stretch;
     gap: 4rem;
     padding: 2rem;
-    min-height: 500px;
-}
-
-.about hr {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto 3rem;
-    border: none;
-    height: 2px;
-    background: repeating-linear-gradient(
-        90deg,
-        #003459,
-        #003459 8px,
-        transparent 8px,
-        transparent 16px
-    );
+    height: clamp(600px, 70vh, 800px); /* Dynamic height based on viewport */
 }
 
 .about-image {
     flex: 1;
     position: relative;
-    height: auto;
     display: flex;
     align-items: center;
 }
@@ -404,10 +457,6 @@ main {
     transition: transform 0.3s ease;
 }
 
-.about-image::after {
-    display: none;
-}
-
 .about-content {
     flex: 1;
     background: rgba(255, 255, 255, 0.9);
@@ -417,12 +466,44 @@ main {
     box-shadow: 0 10px 30px rgba(0, 52, 89, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.about-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.about-content::-webkit-scrollbar-track {
+    background: rgba(0, 52, 89, 0.05);
+    border-radius: 10px;
+}
+
+.about-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 52, 89, 0.2);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.about-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 52, 89, 0.3);
+}
+
+.about-content > * {
+    padding-right: 1rem;
+}
+
+.about-content .section-header {
+    margin-bottom: 1rem;
+}
+
+.about-content .section-header h2 {
+    margin-bottom: 0.5rem;
 }
 
 .about-headline {
-    font-family: 'Lora', serif;
-    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
     font-size: clamp(1.5rem, 4vw, 1.8rem);
     color: #003459;
     margin-bottom: 1.5rem;
@@ -431,15 +512,32 @@ main {
 }
 
 .about-description {
-    font-family: 'Lora', serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: clamp(0.95rem, 2vw, 1.1rem);
     color: #5a7187;
     line-height: 1.8;
     letter-spacing: 0.2px;
+    margin-bottom: 1rem;
 }
 
 /* Media query for responsive about section */
+@media (max-width: 768px) {
+    .about-container {
+        height: auto;
+        min-height: unset;
+    }
+
+    .about-image {
+        height: 400px; /* Fixed height on mobile */
+    }
+
+    .about-content {
+        height: auto;
+        min-height: 400px;
+    }
+}
+
 @media (max-width: 1200px) {
     .about-container {
         width: 95%;
@@ -675,8 +773,8 @@ main {
 .bubble {
     position: absolute;
     border-radius: 50%;
-    background: rgba(0, 52, 89, 0.2); /* Using your primary color with opacity */
-    box-shadow: 0 0 15px rgba(0, 52, 89, 0.5);
+    background: rgba(0, 52, 89, 0.3); /* Using your primary color with opacity */
+    box-shadow: 0 0 15px rgba(0, 52, 89, 0.6);
     z-index: 1;
 }
 
