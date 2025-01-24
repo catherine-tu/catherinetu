@@ -24,18 +24,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Create some bubbles immediately
-    for (let i = 0; i < 15; i++) {
+    // Create initial set of bubbles with random delays
+    const initialBubbles = 8; 
+    for (let i = 0; i < initialBubbles; i++) {
+        setTimeout(() => createBubble(), Math.random() * 2000); 
+    }
+    
+    // Create additional bubbles with varied intervals
+    for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+            createBubble();
+            // Add 1-3 extra bubbles randomly
+            if (Math.random() < 0.3) {
+                setTimeout(createBubble, Math.random() * 300);
+            }
+        }, 1000 + Math.random() * 3000); 
+    }
+    
+    // Continue creating bubbles with random intervals
+    setInterval(() => {
         createBubble();
-    }
-    
-    // Create more bubbles with slight delays to stagger them
-    for (let i = 0; i < 15; i++) {
-        setTimeout(() => createBubble(), i * 200);
-    }
-    
-    // Continue creating bubbles
-    setInterval(createBubble, 500);
+        // Occasionally create an extra bubble
+        if (Math.random() < 0.2) {
+            setTimeout(createBubble, Math.random() * 400);
+        }
+    }, 800 + Math.random() * 400); 
     
     // Typing animation
     const title = document.querySelector('.animate-title');
