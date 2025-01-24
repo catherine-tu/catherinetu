@@ -89,4 +89,95 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+    
+    // Preload slideshow images
+    const slideshowImages = [
+        'mit-logs-pfp.jpg',
+        'fishing.jpg',
+        'nano.jpg'
+    ];
+    
+    function preloadImages() {
+        slideshowImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }
+    
+    // Start preloading immediately
+    preloadImages();
+    
+    // Initialize slideshow only after first image is loaded
+    const firstSlide = document.querySelector('.slide img');
+    if (firstSlide) {
+        if (firstSlide.complete) {
+            initializeSlideshow();
+        } else {
+            firstSlide.onload = initializeSlideshow;
+        }
+    }
+    
+    function initializeSlideshow() {
+        const slides = document.getElementsByClassName("slide");
+        // Show first slide immediately
+        slides[0].classList.add("active");
+        
+        // Initialize slideshow functionality
+        let currentSlideIndex = 1;
+        let autoAdvanceTimer;
+        
+        showSlide(currentSlideIndex);
+
+        function changeSlide(n) {
+            showSlide(currentSlideIndex += n);
+            // Reset the timer whenever slide is changed manually
+            resetAutoAdvance();
+        }
+
+        function currentSlide(n) {
+            showSlide(currentSlideIndex = n);
+            // Reset the timer when directly selecting a slide
+            resetAutoAdvance();
+        }
+
+        function showSlide(n) {
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+            
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            // Remove active class from all dots
+            const dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            // Show current slide and activate corresponding dot
+            slides[currentSlideIndex - 1].classList.add("active");
+            dots[currentSlideIndex - 1].classList.add("active");
+        }
+
+        function resetAutoAdvance() {
+            // Clear the existing timer
+            clearInterval(autoAdvanceTimer);
+            // Start a new timer
+            autoAdvanceTimer = setInterval(() => {
+                changeSlide(1);
+            }, 5000);
+        }
+
+        // Make functions globally accessible
+        window.changeSlide = changeSlide;
+        window.currentSlide = currentSlide;
+
+        // Start the initial auto-advance timer
+        resetAutoAdvance();
+    }
 });

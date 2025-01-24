@@ -161,8 +161,29 @@
 
       <section id="about" class="about">
         <div class="about-container">
-          <div class="about-image">
-            <img src="mit-logs-pfp.jpg" alt="About Me Image" />
+          <div class="about-image-container">
+            <div class="slideshow-container">
+              <div class="slide fade">
+                <img src="mit-logs-pfp.jpg" alt="MIT Logs Performance" />
+                <div class="caption">Performing with the MIT Logs</div>
+              </div>
+              <div class="slide fade">
+                <img src="fishing.jpg" alt="Fishing Trip" />
+                <div class="caption">My family's annual fishing trip</div>
+              </div>
+              <div class="slide fade">
+                <img src="nano.jpg" alt="Clean Room" />
+                <div class="caption">Etching image onto silicon wafer in MIT nano's clean room</div>
+              </div>
+              <!-- Add more slides here -->
+              <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+              <button class="next" onclick="changeSlide(1)">&#10095;</button>
+              <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+              </div>
+            </div>
           </div>
           <div class="about-content">
             <div class="section-header">
