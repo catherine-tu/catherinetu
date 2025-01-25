@@ -94,7 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const slideshowImages = [
         'mit-logs-pfp.jpg',
         'fishing.jpg',
-        'nano.jpg'
+        'nano.jpg',
+        'robo-comp.jpg',
+        'org-lights.jpg',
     ];
     
     function preloadImages() {
