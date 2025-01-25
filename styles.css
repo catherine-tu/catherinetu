@@ -7,7 +7,7 @@
   --secondary-text: #5a7187;
   --background-color: #e1ecf7; /* Alice blue */
   --background-secondary: #abb9d2;
-  --hover-color: #5f9ea0;
+  --hover-color: #5a7187;
 }
 
 /* Reset and base styles */
@@ -101,6 +101,39 @@
       calc(-10vh + var(--y-drift))
     );
     opacity: 0;
+  }
+}
+
+/* New Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -303,6 +336,7 @@ main {
   background-clip: text;
   color: transparent;
   text-shadow: none;
+  animation: scaleIn 0.8s ease-out;
 }
 
 .animate-title {
@@ -355,8 +389,12 @@ main {
 }
 
 .about-content .section-header {
-  text-align: left;
-  margin-bottom: 1rem;
+  text-align: left; /* Center the header */
+  margin-bottom: 0.5rem; /* Reduced from default */
+}
+
+.about-content .section-header h2 {
+  margin-bottom: 0.5rem; /* Reduced spacing after the title */
 }
 
 .about-headline {
@@ -369,6 +407,7 @@ main {
   line-height: 1.4;
   letter-spacing: -0.5px;
   text-align: left;
+  animation: fadeIn 1s ease-out;
 }
 
 /* Projects Section */
@@ -420,16 +459,22 @@ main {
 }
 
 .project-image {
+  position: relative;
   width: 100%;
   height: 200px;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover img {
+  transform: scale(1.05);
 }
 
 .project-content h3 {
@@ -444,21 +489,41 @@ main {
 }
 
 .project-links a {
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: 500;
+  color: var(--text-color);
+  border: 2px solid transparent;
   transition: all 0.3s ease;
 }
 
+.project-links a:hover {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(0, 52, 89, 0.2);
+}
+
 .project-links .live-link {
-  background: #003459;
+  background-color: var(--primary-color);
   color: white;
 }
 
+.project-links .live-link:hover {
+  background-color: var(--hover-color);
+  border: 2px solid var(--primary-color);
+}
+
 .project-links .github-link {
-  border: 1px solid #003459;
-  color: #003459;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.project-links .github-link:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 /* About Section */
@@ -477,14 +542,14 @@ main {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     transparent,
     var(--primary-color),
     var(--accent-color),
     var(--primary-color),
     transparent
-  );
+  ); */
 }
 
 .about-container {
@@ -563,11 +628,12 @@ main {
   font-weight: 500;
   font-size: clamp(1.5rem, 4vw, 1.8rem);
   color: #003459;
-  margin-top: 0.5rem; /* Small top margin */
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   line-height: 1.4;
   letter-spacing: -0.5px;
-  text-align: left; 
+  text-align: left;
+  animation: fadeIn 1s ease-out;
 }
 
 .about-description {
@@ -763,6 +829,42 @@ main {
   justify-content: center;
 }
 
+.social-links a,
+.contact-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--primary-color);
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover,
+.contact-link:hover {
+  background-color: white;
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+/* Override any other hover effects */
+.social-links a:hover,
+.contact-link:hover,
+.contact-button:hover {
+  background-color: white !important;
+  -webkit-text-fill-color: var(--hover-color);
+}
+
+/* Ensure shimmer doesn't affect background */
+.social-links a:hover,
+.contact-link:hover {
+  background: white !important;
+  -webkit-background-clip: initial;
+}
+
 .contact-link {
   display: flex;
   align-items: center;
@@ -778,6 +880,7 @@ main {
 
 .contact-link:hover {
   transform: translateY(-2px);
+  color: white
 }
 
 .contact-link i {
@@ -1135,25 +1238,31 @@ main {
   background: rgba(171, 185, 210, 0.8);
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0, 52, 89, 0.8);
-  animation: float 15s linear forwards;
   pointer-events: none;
+  animation: float 15s linear forwards;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
 }
 
 @keyframes float {
   0% {
-    transform: translate(var(--start-x), 100vh);
+    bottom: -50px;
+    left: var(--start-x);
     opacity: 0;
   }
   10% {
     opacity: 0.8;
   }
   100% {
-    transform: translate(
-      calc(var(--start-x) + var(--x-drift)),
-      -10vh
-    );
+    bottom: 100vh;
+    left: calc(var(--start-x) + var(--x-drift));
     opacity: 0;
   }
+}
+
+.bubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 52, 89, 0.9);
 }
 
 /* Footer */
@@ -1325,4 +1434,65 @@ footer {
   text-align: center;
   font-size: 0.9rem;
   z-index: 2;
+}
+
+/* Add shimmer effect to links */
+a:hover {
+  background: linear-gradient(90deg, 
+    #001830 0%, 
+    #5cade6 50%, 
+    #001830 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover,
+footer a:hover,
+.dark-bg a:hover {
+  background: linear-gradient(90deg, 
+    #005998 0%, 
+    var(--background-secondary) 50%, 
+    #005998 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  animation: none;
+}
+
+/* Update contact button hover states */
+.contact-button {
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--primary-color);
+  background-color: white;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: white;
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+  transform: translateY(-2px);
 }
