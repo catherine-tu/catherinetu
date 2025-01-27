@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'images/fishing.jpg',
         'images/nano.jpg',
         'images/robo-comp.jpg',
-        'images/org-lights.jpg',
+        'images/org-light.jpg',
     ];
     
     function preloadImages() {
