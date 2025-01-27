@@ -1568,14 +1568,46 @@ img:hover {
 
 .timeline-content {
   background: white;
-  padding: 1.5rem;
+  padding: 1.2rem;
   border-radius: 12px;
   position: relative;
   transition: transform 0.2s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .timeline-content:hover {
   transform: translateX(5px);
+}
+
+.timeline-text {
+  flex: 1;
+}
+
+.timeline-image {
+  width: 160px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timeline-image img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover img {
+  transform: scale(1.05);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
 }
 
 .timeline-emoji {
@@ -1611,6 +1643,11 @@ img:hover {
 
   .timeline {
     padding-left: 1.5rem;
+    max-height: 400px;
+  }
+
+  .timeline-line {
+    left: 1.5rem;
   }
 
   .timeline-item {
@@ -1624,6 +1661,16 @@ img:hover {
   }
 
   .timeline-content {
-    padding: 1.2rem;
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .timeline-image {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .timeline-image img {
+    height: 180px;
   }
 }
