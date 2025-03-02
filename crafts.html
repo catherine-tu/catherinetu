@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <title>Catherine Tu - Crafts</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#projects">Projects & Work</a></li>
+        <li><a href="index.html#music">Music</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#awards">Awards</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="crafts.html" class="active">Crafts</a></li>
+        <li><a href="notes.html">Class Notes</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="crafts">
+        <div class="section-header">
+          <h2>Crafts & Art</h2>
+          <p>A collection of my creative projects</p>
+        </div>
+        <div class="crafts-grid">
+          <div class="craft-card">
+            <div class="craft-image slideshow-container">
+              <div class="slide fade">
+                <img src="crafts/potholder.jpg" alt="potholder front" />
+              </div>
+              <div class="slide fade">
+                <img src="crafts/potholder-back.jpg" alt="potholder back" />
+              </div>
+              <div class="craft-overlay">
+                <p>quilted in the MIT makerspace</p>
+              </div>
+              <!-- Navigation dots -->
+              <div class="slideshow-dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="craft-card">
+            <div class="craft-image">
+              <img src="crafts/stained.jpg" alt="Craft 2" />
+              <div class="craft-overlay">
+                <p>created using the copper-foil method in MIT makerspace</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="craft-card">
+            <div class="craft-image">
+              <img src="crafts/tote.jpg" alt="tote bag" />
+              <div class="craft-overlay">
+                <p>sewed a lined tote bag in MIT makerspace</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="craft-card">
+            <div class="craft-image">
+              <img src="images/dj_console.png" alt="Craft 4" />
+              <div class="craft-overlay">
+                <p>Abstract composition exploring geometric patterns and color theory.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="craft-card">
+            <div class="craft-image">
+              <img src="images/nano.jpg" alt="Craft 5" />
+              <div class="craft-overlay">
+                <p>Hand-drawn illustration showcasing intricate detail work and shading techniques.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="craft-card">
+            <div class="craft-image">
+              <img src="images/dj_console.png" alt="Craft 6" />
+              <div class="craft-overlay">
+                <p>Digital photography experiment with post-processing effects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+        
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+      }
+
+      // Auto advance slides every 3 seconds
+      setInterval(() => {
+        slideIndex++;
+        showSlides(slideIndex);
+      }, 3000);
+    </script>
+  </body>
+</html>
