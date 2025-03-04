@@ -206,11 +206,11 @@ nav ul li a {
   nav {
     padding: 0.5rem;
   }
-  
+
   nav ul {
     gap: 0.8rem;
   }
-  
+
   nav ul li a {
     font-size: 0.9rem;
   }
@@ -650,7 +650,12 @@ main {
 /* Section Separator */
 .section-separator {
   height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--accent-color),
+    var(--primary-color)
+  );
   margin: 0;
   border: none;
 }
@@ -715,7 +720,7 @@ main {
 .music-list h3 {
   color: var(--primary-color);
   margin-bottom: 0.1rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .music-year,
@@ -724,7 +729,7 @@ main {
   color: var(--secondary-text);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: italic;
 }
 
@@ -743,7 +748,7 @@ main {
 }
 
 .music-link:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -880,7 +885,7 @@ main {
 
 .contact-link:hover {
   transform: translateY(-2px);
-  color: white
+  color: white;
 }
 
 .contact-link i {
@@ -936,14 +941,14 @@ main {
 }
 
 .notes-intro h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   margin-bottom: 1.5rem;
   color: #2c3e50;
 }
 
 .intro-text {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto;
@@ -1133,12 +1138,16 @@ main {
 
 /* Loading animation */
 @keyframes loading {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .slide::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1159,7 +1168,8 @@ main {
   opacity: 0;
 }
 
-.prev, .next {
+.prev,
+.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1180,7 +1190,8 @@ main {
   opacity: 1;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   background: rgba(0, 0, 0, 0.6);
   transform: translateY(-50%) scale(1.1);
 }
@@ -1438,10 +1449,7 @@ footer {
 
 /* Add shimmer effect to links */
 a:hover {
-  background: linear-gradient(90deg, 
-    #001830 0%, 
-    #5cade6 50%, 
-    #001830 100%);
+  background: linear-gradient(90deg, #001830 0%, #5cade6 50%, #001830 100%);
   background-size: 1000px 100%;
   animation: shimmer 3s infinite linear;
   -webkit-background-clip: text;
@@ -1452,10 +1460,12 @@ a:hover {
 .project-links a:hover,
 footer a:hover,
 .dark-bg a:hover {
-  background: linear-gradient(90deg, 
-    #005998 0%, 
-    var(--background-secondary) 50%, 
-    #005998 100%);
+  background: linear-gradient(
+    90deg,
+    #005998 0%,
+    var(--background-secondary) 50%,
+    #005998 100%
+  );
   background-size: 1000px 100%;
   animation: shimmer 3s infinite linear;
   -webkit-background-clip: text;
@@ -1554,7 +1564,7 @@ img:hover {
 }
 
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -2rem;
   top: 0.5rem;
@@ -1625,7 +1635,7 @@ img:hover {
 
 .timeline-content h3 {
   margin: 0.5rem 0;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.2rem;
   color: var(--text-primary);
 }
@@ -1737,4 +1747,12 @@ img:hover {
 
 .craft-card:hover .craft-overlay {
   opacity: 1;
+}
+
+.slide {
+  display: none;
+}
+
+.slide:first-child {
+  display: block;
 }

@@ -37,33 +37,14 @@
       <section class="crafts">
         <div class="section-header">
           <h2>Crafts & Art</h2>
-          <p>A collection of my creative projects</p>
+          <p>A collection of my craft projects</p>
         </div>
         <div class="crafts-grid">
           <div class="craft-card">
-            <div class="craft-image slideshow-container">
-              <div class="slide fade">
-                <img src="crafts/potholder.jpg" alt="potholder front" />
-              </div>
-              <div class="slide fade">
-                <img src="crafts/potholder-back.jpg" alt="potholder back" />
-              </div>
-              <div class="craft-overlay">
-                <p>quilted in the MIT makerspace</p>
-              </div>
-              <!-- Navigation dots -->
-              <div class="slideshow-dots">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="craft-card">
             <div class="craft-image">
-              <img src="crafts/stained.jpg" alt="Craft 2" />
+              <img src="crafts/pot.gif" alt="potholder" />
               <div class="craft-overlay">
-                <p>created using the copper-foil method in MIT makerspace</p>
+                <p>quilted in MIT makerspace</p>
               </div>
             </div>
           </div>
@@ -81,7 +62,19 @@
             <div class="craft-image">
               <img src="crafts/flamework.jpg" alt="flamework" />
               <div class="craft-overlay">
-                <p>glass flamework turtles, mushrooms, marbles, etc. in mit hotwork makerspace</p>
+                <p>
+                  glass flamework turtles, mushrooms, marbles, etc. in mit
+                  makerspace
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="craft-card">
+            <div class="craft-image">
+              <img src="crafts/stained.jpg" alt="Craft 2" />
+              <div class="craft-overlay">
+                <p>created using the copper-foil method in MIT makerspace</p>
               </div>
             </div>
           </div>
@@ -112,23 +105,27 @@
       showSlides(slideIndex);
 
       function currentSlide(n) {
-        showSlides(slideIndex = n);
+        showSlides((slideIndex = n));
       }
 
       function showSlides(n) {
         const slides = document.getElementsByClassName("slide");
         const dots = document.getElementsByClassName("dot");
-        
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        
+
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
         for (let i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
           dots[i].className = dots[i].className.replace(" active", "");
         }
-        
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
       }
 
       // Auto advance slides every 3 seconds
