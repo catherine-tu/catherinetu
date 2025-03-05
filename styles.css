@@ -1756,3 +1756,27 @@ img:hover {
 .slide:first-child {
   display: block;
 }
+
+/* playlists spotify */
+.playlists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.playlist-card {
+  display: flex; /* Change from flex to block */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlist-card iframe {
+  width: 100%; /* Ensures the iframe fills the container */
+  max-width: 300px; /* Keeps the size manageable */
+  border-radius: 12px;
+}
