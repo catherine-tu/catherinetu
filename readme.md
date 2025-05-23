@@ -5,3 +5,5 @@ $ convert -density 150 'pdfs/3091-final-exam-cheat-sheet.pdf[0]' -quality 90 -gr
 $$start server in terminal$$
 python -m http.server 8000
 -> server will be on http://localhost:8000/
+
+[python3 -m http.server 8000](http://127.0.0.1:55795/notes.html)

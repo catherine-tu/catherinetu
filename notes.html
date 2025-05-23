@@ -37,9 +37,26 @@
         </div>
       </section>
 
+      <div class="filters">
+        <div class="filter-group">
+          <button class="filter-btn active" data-type="all">All Types</button>
+          <button class="filter-btn" data-type="notes">Notes</button>
+          <button class="filter-btn" data-type="cheat-sheet">Cheat Sheets</button>
+        </div>
+        <div class="filter-group">
+          <button class="filter-btn active" data-class="all">All Classes</button>
+          <button class="filter-btn" data-class="6.1010">6.1010</button>
+          <button class="filter-btn" data-class="3.091">3.091</button>
+          <button class="filter-btn" data-class="6.9620">6.9620</button>
+          <button class="filter-btn" data-class="6.1904">6.1904</button>
+          <button class="filter-btn" data-class="6.1200">6.1200</button>
+          <button class="filter-btn" data-class="18.02">18.02</button>
+        </div>
+      </div>
+
       <section class="notes-grid">
-        <!-- MIT 3.091 -->
-        <article class="note-card">
+        <!-- MIT 6.1010 -->
+        <article class="note-card" data-type="notes" data-class="6.1010">
           <div class="pdf-preview">
             <img
               src="pdf-previews/61010-recitations-preview.png"
@@ -73,7 +90,7 @@
         </article>
 
         <!-- MIT 3.091  -->
-        <article class="note-card">
+        <article class="note-card" data-type="cheat-sheet" data-class="3.091">
           <div class="pdf-preview">
             <img
               src="pdf-previews/3091-final-exam-cheat-sheet-preview.png"
@@ -107,7 +124,7 @@
         </article>
 
         <!-- MIT weblab -->
-        <article class="note-card">
+        <article class="note-card" data-type="notes" data-class="6.9620">
           <div class="pdf-preview">
             <img
               src="pdf-previews/weblab-preview.png"
@@ -138,7 +155,7 @@
         </article>
 
         <!-- MIT 6190 -->
-        <article class="note-card">
+        <article class="note-card" data-type="notes" data-class="6.1904">
           <div class="pdf-preview">
             <img
               src="pdf-previews/6190-preview-0.png"
@@ -170,7 +187,7 @@
         </article>
 
         <!-- MIT 61200 -->
-        <article class="note-card">
+        <article class="note-card" data-type="cheat-sheet" data-class="6.1200">
           <div class="pdf-preview">
             <img
               src="pdf-previews/61200-preview.png"
@@ -201,7 +218,7 @@
         </article>
 
         <!-- MIT 1802 -->
-        <article class="note-card">
+        <article class="note-card" data-type="cheat-sheet" data-class="18.02">
           <div class="pdf-preview">
             <img
               src="pdf-previews/1802-preview.png"
@@ -237,6 +254,7 @@
       <p>&copy; 2024 Catherine Tu. All rights reserved.</p>
     </footer>
 
-    <script src="notes.js"></script>
+    <!-- Load JavaScript -->
+    <script src="notes.js" type="text/javascript"></script>
   </body>
 </html>
