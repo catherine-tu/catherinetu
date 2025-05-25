@@ -41,10 +41,14 @@
         <div class="filter-group">
           <button class="filter-btn active" data-type="all">All Types</button>
           <button class="filter-btn" data-type="notes">Notes</button>
-          <button class="filter-btn" data-type="cheat-sheet">Cheat Sheets</button>
+          <button class="filter-btn" data-type="cheat-sheet">
+            Cheat Sheets
+          </button>
         </div>
         <div class="filter-group">
-          <button class="filter-btn active" data-class="all">All Classes</button>
+          <button class="filter-btn active" data-class="all">
+            All Classes
+          </button>
           <button class="filter-btn" data-class="6.1010">6.1010</button>
           <button class="filter-btn" data-class="3.091">3.091</button>
           <button class="filter-btn" data-class="6.9620">6.9620</button>
@@ -186,7 +190,7 @@
           </div>
         </article>
 
-        <!-- MIT 61200 -->
+        <!-- MIT 61200 CS -->
         <article class="note-card" data-type="cheat-sheet" data-class="6.1200">
           <div class="pdf-preview">
             <img
@@ -217,7 +221,38 @@
           </div>
         </article>
 
-        <!-- MIT 1802 -->
+        <!-- MIT 61200 Notes -->
+        <article class="note-card" data-type="notes" data-class="6.1200">
+          <div class="pdf-preview">
+            <img
+              src="pdf-previews/6120-notes-preview.png"
+              alt="Preview of 6.1200 Cheat Sheet"
+              class="preview-image"
+            />
+            <div class="preview-overlay">
+              <i class="fas fa-eye"></i>
+              <span>Click to View</span>
+            </div>
+          </div>
+          <div class="note-content">
+            <h2>Notes: Math For CS</h2>
+            <p class="course-code">6.1200</p>
+            <p class="note-description">
+              Lecture notes throughout Tues & Thurs classes
+            </p>
+            <div class="note-meta">
+              <span class="pages"
+                ><i class="fas fa-book-open"></i> 48 pages</span
+              >
+              <span class="date">Spring 2025</span>
+            </div>
+            <a href="pdfs/6120-Notes.pdf" class="view-notes" target="_blank"
+              >View Notes <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+
+        <!-- MIT 1802 Cheat Sheet -->
         <article class="note-card" data-type="cheat-sheet" data-class="18.02">
           <div class="pdf-preview">
             <img
@@ -231,7 +266,7 @@
             </div>
           </div>
           <div class="note-content">
-            <h2>Cheat Sheet: Linear Algebra</h2>
+            <h2>Cheat Sheet: Multivariable Calculus</h2>
             <p class="course-code">18.02</p>
             <p class="note-description">
               Vector fields, manipulating line integrals, Hessian, etc.
@@ -247,6 +282,35 @@
             ></a>
           </div>
         </article>
+
+        <!-- MIT 1802 Notes -->
+        <article class="note-card" data-type="notes" data-class="18.02">
+          <div class="pdf-preview">
+            <img
+              src="pdf-previews/1802-notes-preview.png"
+              alt="Preview of 18.02 Notes"
+              class="preview-image"
+            />
+            <div class="preview-overlay">
+              <i class="fas fa-eye"></i>
+              <span>Click to View</span>
+            </div>
+          </div>
+          <div class="note-content">
+            <h2>Notes: Multivariable Calculus</h2>
+            <p class="course-code">18.02</p>
+            <p class="note-description">Lectures & recitations</p>
+            <div class="note-meta">
+              <span class="pages"
+                ><i class="fas fa-book-open"></i> 53 pages</span
+              >
+              <span class="date">Spring 2025</span>
+            </div>
+            <a href="pdfs/18.02-lec.pdf" class="view-notes" target="_blank"
+              >View Notes <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
       </section>
     </main>
 
@@ -255,6 +319,8 @@
     </footer>
 
     <!-- Load JavaScript -->
-    <script src="notes.js" type="text/javascript"></script>
+    <script src="notes.js">
+      console.log("Script starting...");
+    </script>
   </body>
 </html>
