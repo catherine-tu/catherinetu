@@ -47,6 +47,7 @@
             crafting every week and passing on my knowledge to others,
             continuing the sprit of making at MIT.<br />
             <br />
+            Hover / click over any image for the description! <br />
             <b> Most Recent to Least Recent: </b>
           </p>
         </div>
@@ -546,6 +547,30 @@
         slideIndex++;
         showSlides(slideIndex);
       }, 3000);
+
+      // Enable mobile/touch support for craft overlay descriptions
+      document.querySelectorAll(".craft-card").forEach((card) => {
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.addEventListener("click", () => {
+          const shouldOpen = !card.classList.contains("active");
+          document
+            .querySelectorAll(".craft-card.active")
+            .forEach((activeCard) => {
+              if (activeCard !== card) {
+                activeCard.classList.remove("active");
+              }
+            });
+          card.classList.toggle("active", shouldOpen);
+        });
+
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            card.click();
+          }
+        });
+      });
     </script>
   </body>
 </html>

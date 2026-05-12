@@ -141,7 +141,9 @@
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .scroll-reveal.visible {
@@ -1016,7 +1018,9 @@ main {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -1797,8 +1801,16 @@ img:hover {
   text-align: center;
 }
 
-.craft-card:hover .craft-overlay {
+.craft-card:hover .craft-overlay,
+.craft-card:focus .craft-overlay,
+.craft-card:focus-within .craft-overlay,
+.craft-card.active .craft-overlay {
   opacity: 1;
+}
+
+.craft-card:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: -3px;
 }
 
 /* playlists spotify */
