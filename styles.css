@@ -1775,11 +1775,12 @@ img:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .craft-overlay {
   position: absolute;
+  z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
@@ -1808,11 +1809,17 @@ img:hover {
   }
 }
 
-.craft-card:focus .craft-overlay,
+.craft-card.active .craft-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* .craft-card:focus .craft-overlay,
 .craft-card:focus-within .craft-overlay,
 .craft-card.active .craft-overlay {
   opacity: 1;
-}
+  pointer-events: auto;
+} */
 
 .craft-card:focus-visible {
   outline: 3px solid var(--accent-color);
