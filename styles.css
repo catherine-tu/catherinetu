@@ -1801,7 +1801,12 @@ img:hover {
   text-align: center;
 }
 
-.craft-card:hover .craft-overlay,
+@media (hover: hover) {
+  .craft-card:hover .craft-overlay {
+    opacity: 1;
+  }
+}
+
 .craft-card:focus .craft-overlay,
 .craft-card:focus-within .craft-overlay,
 .craft-card.active .craft-overlay {
