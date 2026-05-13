@@ -19,6 +19,24 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
   </head>
+  <script>
+    document.querySelectorAll(".craft-card").forEach((card) => {
+      card.addEventListener("click", function (e) {
+        const isActive = this.classList.contains("active");
+        document
+          .querySelectorAll(".craft-card.active")
+          .forEach((c) => c.classList.remove("active"));
+        if (!isActive) this.classList.add("active");
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".craft-card")) {
+        document
+          .querySelectorAll(".craft-card.active")
+          .forEach((c) => c.classList.remove("active"));
+      }
+    });
+  </script>
   <body>
     <nav>
       <ul>
